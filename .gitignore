@@ -6,6 +6,7 @@ __pycache__/
 .coverage
 htmlcov/
 .mypy_cache/
+.ruff_cache/
 
 # Local environments and secrets
 .venv/
@@ -13,21 +14,33 @@ env/
 venv/
 ENV/
 .env
-.env.local
+.env.*
 .streamlit/secrets.toml
+.streamlit/
 
 # Logs and temporary files
 *.log
+*.tmp
+*.bak
+*.orig
 scratch/
 tmp/
 temp/
 TODO.md
 
+# Build and distribution
+dist/
+build/
+*.egg-info/
 
 # Editor and operating-system files
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
 Thumbs.db
+desktop.ini
 .DS_Store
 *.swp
 *.swo
+
