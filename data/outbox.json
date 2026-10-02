@@ -7,5 +7,32 @@
     "comment": "big W! 🔥",
     "mode": "quick_reaction",
     "timestamp": "2026-10-01T10:47:36.329526+00:00"
+  },
+  {
+    "id": "58c285b7f3912675",
+    "status": "approved_handoff_mock",
+    "founder": "Rico",
+    "post_text": "We just launched our first AI agent into production. The demo worked, but retries, permissions and failure recovery turned out to be the real work.",
+    "comment": "big W 🔥",
+    "mode": "humorous_personal",
+    "timestamp": "2026-10-02T07:10:31.101087+00:00"
+  },
+  {
+    "id": "bbc3c27b35c9ff40",
+    "status": "approved_handoff_mock",
+    "founder": "Fathin",
+    "post_text": "Companies are preparing for new AI transparency requirements, but most still don't know where AI is actually being used.",
+    "comment": "The hard part is building a durable run record that flags every place an LLM touches data and who can stop it.",
+    "mode": "add_insight",
+    "timestamp": "2026-10-02T07:13:42.351989+00:00"
+  },
+  {
+    "id": "62137e6e3769bb8e",
+    "status": "approved_handoff_mock",
+    "founder": "Fathin",
+    "post_text": "We're giving our AI agents more tools and more autonomy. The main question is how much autonomy they should have before asking a human.",
+    "comment": "Defining the stopping condition is the hard part, not adding another tool.",
+    "mode": "add_insight",
+    "timestamp": "2026-10-02T07:16:25.068026+00:00"
   }
 ]

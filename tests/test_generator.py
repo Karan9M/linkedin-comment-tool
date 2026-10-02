@@ -130,3 +130,33 @@ def test_reviewed_feedback_is_in_prompt():
         reviewed_examples=[{"ai_draft": "Great post!", "final_text": "The evaluation unit matters more than the average."}],
     )
     assert "The evaluation unit matters more than the average." in prompt
+
+
+def test_contribution_plan_is_attached_to_generated_comment():
+    post = Post(id="6", text="Our latency reduced, but failure modes after restart are still unclear.")
+    result = generate_comment(
+        post=post,
+        mode=CommentMode.ADD_INSIGHT,
+        voice_examples=[],
+        founder="Fathin",
+        provider="stub",
+    )
+    assert result.plan is not None
+    assert "post_hook" in result.plan
+    assert result.plan["response_shape"] == "observation"
+
+
+def test_structured_candidates_and_alternative_when_justified():
+    post = Post(id="7", text="Our latency reduced, but failure modes after restart are still hard to understand.")
+    result = generate_comment(
+        post=post,
+        mode=CommentMode.ADD_INSIGHT,
+        voice_examples=[],
+        founder="Fathin",
+        provider="stub",
+    )
+    assert len(result.candidates) >= 2
+    shapes = [c.response_shape for c in result.candidates]
+    assert "observation" in shapes
+    assert "question" in shapes
+

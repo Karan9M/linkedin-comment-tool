@@ -109,27 +109,83 @@ Feedback is used as evidence for future generations.
 
 The prototype will not implement model fine-tuning or autonomous learning. Adaptation will initially happen through retrieval of reviewed examples.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    subgraph Untrusted_Input["Untrusted Input Layer"]
+        Post[LinkedIn Post Text & Author]
+    end
+
+    subgraph Decision_Gate["Engagement & Safety Gate (src/engagement.py)"]
+        Gate{Inspectable Founder-Fit Score}
+        Post --> Gate
+        Gate -- "Negative Triggers (Sensitive / Promotional / Injection / Unrelated)" --> Skip[SKIP: No Action]
+        Gate -- "Uncertain / Advisory Context" --> Ask[ASK: Human Decision]
+        Gate -- "High Founder-Fit Signal" --> Engage[ENGAGE]
+    end
+
+    subgraph Planning_and_Context["Canonical Evidence & Planning (src/context.py & src/planner.py)"]
+        Engage --> Planner[Contribution Planner]
+        Planner --> Hook[Post Hook & Context Type]
+        Planner --> Shape[Target Response Shape]
+        
+        Pack[Canonical Founder Evidence Pack]
+        Pack -.-> MatchedObs[Observed Comments: Target Matched]
+        Pack -.-> StyleObs[Observed Comments: Style Only]
+        Pack -.-> FounderPrefs[Founder Context & Preferences]
+        Pack -.-> ReviewedFeed[Reviewed Human Feedback]
+        Pack -.-> SynthCal[Synthetic Calibration]
+        
+        Hook & Shape & Pack --> PromptGen[Prompt Assembler]
+    end
+
+    subgraph Generation_and_Guard["Generation & Guardrails (src/generator.py & src/claims.py)"]
+        PromptGen --> LLM[Model Provider: Groq / Deterministic Stub]
+        LLM --> Candidates[Structured Candidate Proposals]
+        Candidates --> Guard{Quality & Claims Guard}
+        Guard --> QualChecks[Quality & Vocabulary Stuffing Check]
+        Guard --> ClaimChecks[Claims Ledger & First-Person Guard]
+    end
+
+    subgraph Human_Control["Human Authority Boundary (app.py)"]
+        Guard --> UI[Founder Review Interface]
+        UI --> ActionApprove[Approve]
+        UI --> ActionEdit[Edit: Light vs Substantial]
+        UI --> ActionReject[Reject: Structured Reason]
+    end
+
+    subgraph Persistence["Storage & Mock Handoff (data/)"]
+        ActionApprove --> Outbox[(Mock Outbox Handoff)]
+        ActionApprove & ActionEdit & ActionReject --> FeedbackStore[(Feedback Ledger: Reversible & Deduplicated)]
+        FeedbackStore -.-> Pack
+    end
+```
+
 ## State Model
 
 ```text
-RECEIVED
+RECEIVED (Untrusted external post)
    ↓
-EVALUATED
-   ├── SKIPPED
-   │
-   └── ENGAGE
+EVALUATED (Inspectable founder-fit scoring)
+   ├── SKIPPED (Non-action; clear explanation)
+   ├── ASK (Human discretion; Draft Anyway option)
+   └── ENGAGE (Qualified contribution opportunity)
           ↓
-       DRAFTED
+       PLANNED (Hook, context type, plausible contribution, response shape)
           ↓
-       CHECKED
+       DRAFTED (1 or 2 distinct candidates; or CANNOT_GENERATE)
           ↓
-       REVIEWED
-       ├── APPROVED
-       ├── EDITED
-       └── REJECTED
+       CHECKED (Claims guard, vocabulary stuffing, em dash, generic language)
+          ↓
+       REVIEWED (Human authority boundary)
+       ├── APPROVED → Mock handoff outbox
+       ├── EDITED   → Classified (light vs substantial) & saved to feedback
+       └── REJECTED → Structured failure category & saved to feedback
 ```
 
-Every transition should be explicit and inspectable.
+Every transition is explicit, explainable, and inspectable.
+
 
 ## Data Boundaries
 
@@ -197,9 +253,23 @@ If the voice evidence is insufficient:
 
 If the model fails:
 
-Return an explicit error and preserve the original post/input.
+Return an explicit error and preserve the original post/input without blocking the UI or crashing the process.
 
 The system should fail toward non-action rather than inventing a comment.
+
+### Retention and Reversibility
+
+- **Auditability:** All human interactions (approvals, edits, and rejections) are immutably logged with sha256 stable IDs, timestamps, founder identity, source post context, and edit magnitude.
+- **Reversible Learning:** Any feedback record can be inspected and deleted via `delete_review(record_id)`. Once deleted, the record is immediately purged from `data/feedback.json` and excluded from all future retrieval packs.
+- **Deduplication:** Repeated saves of identical candidate-decision pairs are automatically de-duplicated to prevent skewing the learning retriever.
+- **Zero Platform Data Retention:** No cookies, session tokens, or private LinkedIn credentials are ever requested, processed, or persisted.
+
+### Model Provider Failure & Recovery
+
+- **Provider Fallback:** If `GROQ_API_KEY` is not present or if the external API returns a rate-limit/connection error, the pipeline gracefully returns an explicit warning (`"Deterministic stub model used"` or `"Model could not produce a safe useful comment"`).
+- **Graceful Non-Action:** When the model returns `CANNOT_GENERATE` or an empty response, the UI clearly displays the abstention reason and provides a human-guided path rather than generating hallucinatory filler.
+- **Input Preservation:** Source post text, founder preferences, and review choices are preserved in `st.session_state` across model timeouts or generation retries.
+
 
 ## Security and Privacy
 

@@ -1,9 +1,10 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import json
 from pathlib import Path
 
 from src.claims import load_facts, validate_claims
 from src.comment_mode import select_comment_mode
+from src.context import build_founder_evidence_pack
 from src.engagement import decide_engagement
 from src.generator import GeneratedComment, generate_comment
 from src.models import (
@@ -36,6 +37,12 @@ class PipelineResult:
     claim_warnings: list[str]
 
     blocked: bool
+
+    positive_factors: list[str] = field(default_factory=list)
+    negative_factors: list[str] = field(default_factory=list)
+    founder_fit_score: float = 0.0
+
+
 
 
 def load_voice_profile(
@@ -81,7 +88,8 @@ def run_pipeline(
     # =====================================================
 
     engagement = decide_engagement(
-        post
+        post,
+        founder=person,
     )
 
     # ASK / SKIP normally stop drafting.
@@ -110,6 +118,9 @@ def run_pipeline(
             engagement_confidence=(
                 engagement.confidence
             ),
+            positive_factors=engagement.positive_factors,
+            negative_factors=engagement.negative_factors,
+            founder_fit_score=engagement.fit_score,
 
             comment_mode=None,
             voice_examples=[],
@@ -133,49 +144,31 @@ def run_pipeline(
     )
 
     # =====================================================
-    # 3. Retrieve observed voice examples
+    # 3. Build one evidence pack for both UI and generation
     # =====================================================
 
-    from src.voice import retrieve_voice_examples
-
-    try:
-        relevant_examples = retrieve_voice_examples(
-            post=post,
-            person=person,
-            examples=voice_examples,
-            top_k=5,
-            desired_mode=mode,
-        )
-
-    except TypeError:
-        # Backward compatibility if the retriever
-        # does not yet support desired_mode.
-        relevant_examples = retrieve_voice_examples(
-            post=post,
-            person=person,
-            examples=voice_examples,
-            top_k=5,
-        )
-
-    # =====================================================
-    # 4. Load founder voice profile
-    # =====================================================
-
-    voice_profile = load_voice_profile(
-        founder=person
+    evidence_pack = build_founder_evidence_pack(
+        founder=person,
+        post_text=post.text,
+        mode=mode,
+        voice_examples=voice_examples,
+    )
+    relevant_examples = (
+        evidence_pack["matched_observed_examples"]
+        + evidence_pack["style_only_observed_comments"]
     )
 
     # =====================================================
-    # 5. Generate comment
+    # 4. Generate comment
     # =====================================================
 
     generated = generate_comment(
         post=post,
         mode=mode,
-        voice_examples=relevant_examples,
+        voice_examples=voice_examples,
         founder=person,
-        voice_profile=voice_profile,
         provider=provider,
+        evidence_pack=evidence_pack,
     )
 
     # =====================================================
@@ -214,27 +207,10 @@ def run_pipeline(
     )
 
     # =====================================================
-    # 8. Retrieve calibration examples
+    # 8. Surface the same calibration used by generation
     # =====================================================
 
-    try:
-
-        from src.founder_context import (
-            retrieve_reference_pairs,
-        )
-
-        reference_examples = (
-            retrieve_reference_pairs(
-                post_text=post.text,
-                founder=person,
-                mode=mode.value,
-                top_k=4,
-            )
-        )
-
-    except Exception:
-
-        reference_examples = []
+    reference_examples = evidence_pack["candidate_calibration"]
 
     # =====================================================
     # 9. Final result
@@ -253,6 +229,9 @@ def run_pipeline(
         engagement_confidence=(
             engagement.confidence
         ),
+        positive_factors=engagement.positive_factors,
+        negative_factors=engagement.negative_factors,
+        founder_fit_score=engagement.fit_score,
 
         comment_mode=mode,
 

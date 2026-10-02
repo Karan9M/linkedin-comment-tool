@@ -41,7 +41,7 @@ def test_unrelated_rico_comments_are_style_only_for_personal_post():
     assert pack["style_only_observed_comments"]
 
 
-def test_candidate_calibration_is_not_present_when_no_saved_responses_exist():
+def test_verified_calibration_is_not_present_when_no_saved_responses_exist():
     post = Post(id="x", text="A simple startup update.")
     examples = load_voice_examples(VOICE_FILE)
 
@@ -52,4 +52,5 @@ def test_candidate_calibration_is_not_present_when_no_saved_responses_exist():
         voice_examples=examples,
     )
 
-    assert pack["candidate_calibration"] == []
+    assert pack["verified_calibration"] == []
+

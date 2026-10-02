@@ -3,14 +3,12 @@ from collections import Counter
 from pathlib import Path
 
 from src.models import Post
-from src.paths import EVAL_FILE, VOICE_FILE
+from src.paths import EVAL_FILE, HELD_OUT_EVAL_FILE, VOICE_FILE
 from src.pipeline import run_pipeline
 from src.voice import load_voice_examples
 
 
-def main() -> None:
-    cases = json.loads(EVAL_FILE.read_text(encoding="utf-8"))
-    voice = load_voice_examples(VOICE_FILE)
+def run_eval_suite(cases: list[dict], suite_name: str, voice: list) -> dict:
     correct = 0
     expected_counts = Counter()
     actual_counts = Counter()
@@ -35,7 +33,7 @@ def main() -> None:
         if actual == expected:
             correct += 1
         else:
-            mismatches.append((case["id"], expected, actual))
+            mismatches.append((case["id"], expected, actual, case.get("notes", "")))
         if result.quality_warnings:
             quality_flagged += 1
         if result.blocked:
@@ -43,16 +41,22 @@ def main() -> None:
 
     total = len(cases)
     skip_expected = expected_counts["skip"]
-    skip_correct = sum(1 for case in cases if case["expected_decision"] == "skip" and next(
-        r for r in [run_pipeline(Post(case["id"], case["text"]), case["founder"], voice, provider="stub")]
-    ).engagement_decision.value == "skip")
+    skip_correct = sum(
+        1 for case in cases
+        if case["expected_decision"] == "skip" and run_pipeline(
+            Post(case["id"], case["text"]), case["founder"], voice, provider="stub"
+        ).engagement_decision.value == "skip"
+    )
 
-    print("Byro evaluation (deterministic stub)\n")
-    print(f"Cases: {total}")
+    print(f"\n========================================================")
+    print(f"Byro Evaluation: {suite_name} (deterministic stub)")
+    print(f"========================================================")
+    print(f"Cases evaluated: {total}")
     print(f"Decision accuracy: {correct}/{total} = {correct/total:.0%}")
     print(f"Skip accuracy: {skip_correct}/{skip_expected} = {skip_correct/skip_expected:.0%}" if skip_expected else "Skip accuracy: n/a")
     print(f"Drafts flagged by quality checks: {quality_flagged}")
     print(f"Drafts blocked by claims guard: {claims_blocked}")
+
     print("\nExpected decisions:")
     for key in ("engage", "ask", "skip"):
         print(f"  {key:>6}: {expected_counts[key]}")
@@ -62,10 +66,32 @@ def main() -> None:
     print("\nMode distribution:")
     for key, count in sorted(mode_counts.items()):
         print(f"  {key:>20}: {count}")
+
     if mismatches:
         print("\nMismatches:")
         for item in mismatches:
-            print(f"  {item[0]} expected={item[1]} actual={item[2]}")
+            print(f"  [{item[0]}] expected={item[1]} actual={item[2]} ({item[3]})")
+
+    return {
+        "suite": suite_name,
+        "total": total,
+        "accuracy": correct / total if total else 0.0,
+        "mismatches": mismatches,
+    }
+
+
+def main() -> None:
+    voice = load_voice_examples(VOICE_FILE)
+
+    # 1. Primary regression suite
+    if EVAL_FILE.exists():
+        cases = json.loads(EVAL_FILE.read_text(encoding="utf-8"))
+        run_eval_suite(cases, "Primary Regression Suite", voice)
+
+    # 2. Held-out independent evaluation suite
+    if HELD_OUT_EVAL_FILE.exists():
+        held_out_cases = json.loads(HELD_OUT_EVAL_FILE.read_text(encoding="utf-8"))
+        run_eval_suite(held_out_cases, "Held-Out Independent Suite", voice)
 
 
 if __name__ == "__main__":

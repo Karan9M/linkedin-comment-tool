@@ -133,6 +133,33 @@ def test_feedback_is_deduplicated(tmp_path):
     assert len(load_reviews(feedback_file)) == 1
 
 
+def test_edited_feedback_records_edit_magnitude(tmp_path):
+    feedback_file = tmp_path / "feedback.json"
+    save_review(
+        Review(
+            candidate_text="The recovery path matters more than the demo.",
+            decision=ReviewDecision.EDIT,
+            edited_text="The recovery path matters more than the demo.",
+            founder="Fathin",
+            post_text="A product demo reached production.",
+        ),
+        feedback_file,
+    )
+    save_review(
+        Review(
+            candidate_text="Great post!",
+            decision=ReviewDecision.EDIT,
+            edited_text="Which decision fails when recovery is missing?",
+            founder="Fathin",
+            post_text="A different product question.",
+        ),
+        feedback_file,
+    )
+
+    magnitudes = [item["edit_magnitude"] for item in load_reviews(feedback_file)]
+    assert magnitudes == ["light", "substantial"]
+
+
 def test_positive_feedback_is_founder_filtered(tmp_path):
     feedback_file = tmp_path / "feedback.json"
     save_review(

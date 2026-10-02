@@ -64,3 +64,23 @@ def test_empty_comment_is_flagged():
     )
 
     assert "Comment is empty." in warnings
+
+
+def test_vocabulary_stuffing_is_flagged_when_context_unsupported():
+    warnings = check_comment_quality(
+        comment="young goats in action",
+        mode=CommentMode.QUICK_REACTION,
+        post_text="We migrated our relational database to a new cloud cluster.",
+        founder="Rico",
+    )
+    assert any("Vocabulary stuffing" in w for w in warnings)
+
+
+def test_vocabulary_allowed_when_context_is_natural():
+    warnings = check_comment_quality(
+        comment="young goats \U0001fae1",
+        mode=CommentMode.QUICK_REACTION,
+        post_text="The student team won the 48-hour hackathon building an MVP.",
+        founder="Rico",
+    )
+    assert not any("Vocabulary stuffing" in w for w in warnings)

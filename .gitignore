@@ -1,15 +1,33 @@
 # Python bytecode and test caches
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
 
 # Local environments and secrets
 .venv/
+env/
+venv/
+ENV/
 .env
+.env.local
 .streamlit/secrets.toml
+
+# Logs and temporary files
+*.log
+scratch/
+tmp/
+temp/
+TODO.md
+
 
 # Editor and operating-system files
 .vscode/
 .idea/
 Thumbs.db
 .DS_Store
+*.swp
+*.swo

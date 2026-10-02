@@ -10,3 +10,5 @@ VOICE_PROFILE_FILE = FIXTURE_DIR / "voice_profiles.json"
 FACTS_FILE = FIXTURE_DIR / "facts.json"
 DEMO_POSTS_FILE = FIXTURE_DIR / "demo_posts.json"
 EVAL_FILE = FIXTURE_DIR / "eval_posts.json"
+HELD_OUT_EVAL_FILE = FIXTURE_DIR / "held_out_eval.json"
+

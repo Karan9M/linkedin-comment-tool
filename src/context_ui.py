@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from src.founder_context import (
+from src.context import (
     get_founder_context,
     load_comment_bank,
     save_founder_context,

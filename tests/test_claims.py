@@ -39,3 +39,34 @@ def test_post_url_can_be_repeated():
         {"Fathin": {"approved_claims": []}},
     )
     assert warnings == []
+
+
+def test_unsupported_multiplier_is_blocked():
+    warnings = validate_claims(
+        "This led to a 10x increase in throughput.",
+        "Throughput improved after the update.",
+        "Rico",
+        {"Rico": {"approved_claims": []}},
+    )
+    assert any("10x" in warning for warning in warnings)
+
+
+def test_unsupported_customer_claim_is_blocked():
+    warnings = validate_claims(
+        "Our customers saw great results with this approach.",
+        "A discussion about software tooling.",
+        "Rico",
+        {"Rico": {"approved_claims": []}},
+    )
+    assert any("customer" in warning.lower() for warning in warnings)
+
+
+def test_unsupported_external_attribution_is_blocked():
+    warnings = validate_claims(
+        "As Sam Altman pointed out, models are changing rapidly.",
+        "Models are changing rapidly in production.",
+        "Fathin",
+        {"Fathin": {"approved_claims": []}},
+    )
+    assert any("Sam Altman" in warning for warning in warnings)
+

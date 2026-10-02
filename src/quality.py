@@ -11,8 +11,38 @@ GENERIC_PHRASES = (
 )
 
 
+def check_vocabulary_stuffing(comment: str, post_text: str, founder: str = "") -> list[str]:
+    """
+    Ensure founder-associated terms appear ONLY when naturally supported by the post.
+    """
+    warnings: list[str] = []
+    comment_lower = comment.lower()
+    post_lower = post_text.lower()
 
-def check_comment_quality(comment: str, mode: CommentMode, post_text: str, recent_comments: list[str] | None = None) -> list[str]:
+    # Rico's terms
+    if "young goats" in comment_lower:
+        if not any(k in post_lower for k in ("hackathon", "student", "students", "young", "college", "builders", "youth", "campus")):
+            warnings.append("Vocabulary stuffing: 'young goats' used on a post without student, youth, or hackathon context.")
+
+    if "canon event" in comment_lower:
+        if not any(k in post_lower for k in ("college", "student", "first", "mistake", "startup", "unreal", "started", "shipping", "break")):
+            warnings.append("Vocabulary stuffing: 'canon event' used on a post without early startup struggle or milestone context.")
+
+    # Fathin's terms
+    if "operating boundary" in comment_lower or "release gate" in comment_lower:
+        if not any(k in post_lower for k in ("agent", "eval", "boundary", "failure", "production", "gate", "system", "recovery", "permission", "software")):
+            warnings.append("Vocabulary stuffing: technical architecture phrase used on an unrelated context.")
+
+    return warnings
+
+
+def check_comment_quality(
+    comment: str,
+    mode: CommentMode,
+    post_text: str,
+    recent_comments: list[str] | None = None,
+    founder: str = "",
+) -> list[str]:
     warnings: list[str] = []
     text = comment.strip()
     lower = text.lower()
@@ -47,5 +77,8 @@ def check_comment_quality(comment: str, mode: CommentMode, post_text: str, recen
             if normalized and normalized == " ".join(previous.lower().split()):
                 warnings.append("Comment repeats a recent approved comment.")
                 break
+
+    # Add vocabulary stuffing checks
+    warnings.extend(check_vocabulary_stuffing(comment, post_text, founder))
 
     return list(dict.fromkeys(warnings))

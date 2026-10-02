@@ -5,11 +5,16 @@ import json
 from src.paths import FACTS_FILE
 
 FIRST_PERSON_PATTERNS = (
-    r"\bwe\s+(?:built|made|launched|shipped|tested|measured|reduced|increased)\b",
-    r"\bmy\s+experience\b",
-    r"\bin\s+my\s+experience\b",
-    r"\bi\s+(?:built|made|launched|shipped|tested|measured|used|found)\b",
-    r"\bat\s+our\s+(?:company|startup|team)\b",
+    r"\bwe\s+(?:built|made|launched|shipped|tested|measured|reduced|increased|saw|scaled|achieved|discovered|decided|hit)\b",
+    r"\b(?:in\s+)?my\s+experience\b",
+    r"\bi\s+(?:built|made|launched|shipped|tested|measured|used|found|saw|noticed|achieved|realized)\b",
+    r"\bat\s+(?:our\s+)?(?:company|startup|team|byro)\b",
+    r"\bwe\s+always\b",
+    r"\bi\s+personally\b",
+)
+
+CUSTOMER_PATTERNS = (
+    r"\b(?:our\s+)?(?:clients|customers|users)\s+(?:saw|reported|experienced|told\s+us|achieved)\b",
 )
 
 
@@ -24,7 +29,8 @@ def load_facts(path: str | Path = FACTS_FILE) -> dict:
 
 
 def _number_tokens(text: str) -> set[str]:
-    return set(re.findall(r"(?<![A-Za-z])\$?\d+(?:\.\d+)?%?", text))
+    # Match numbers with currency, decimals, percentages, or multipliers ($100, 40%, 10x, 2.5k)
+    return set(re.findall(r"(?<![A-Za-z])\$?\d+(?:\.\d+)?(?:%|[xXkKmM])?", text))
 
 
 def _allowed_text(founder: str, post_text: str, facts: dict) -> str:
@@ -49,6 +55,21 @@ def validate_claims(comment: str, post_text: str, founder: str, facts: dict | No
         if re.search(pattern, lower):
             warnings.append("Unsupported first-person experience or result claim.")
             break
+
+    for pattern in CUSTOMER_PATTERNS:
+        if re.search(pattern, lower):
+            warnings.append("Unsupported customer/client metric or experience claim.")
+            break
+
+    # Unsupported external attribution check
+    # e.g., "As Andrej Karpathy pointed out..." when not in post or facts
+    attributions = re.findall(
+        r"\b(?:[aA]s|according\s+to)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+(?:pointed\s+out|said|mentioned|argued|noted|claimed)\b",
+        comment,
+    )
+    for name in attributions:
+        if name.lower() not in allowed_text.lower():
+            warnings.append(f"Unsupported external attribution to '{name}'.")
 
     # Detect explicit URLs/product-like tokens not present in the source/ledger.
     urls = re.findall(r"https?://[^\s)]+", comment)

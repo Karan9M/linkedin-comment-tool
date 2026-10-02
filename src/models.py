@@ -49,6 +49,9 @@ class EngagementResult:
     decision: EngagementDecision
     reason: str
     confidence: float
+    positive_factors: list[str] = field(default_factory=list)
+    negative_factors: list[str] = field(default_factory=list)
+    fit_score: float = 0.0
 
 
 @dataclass
@@ -64,8 +67,23 @@ class Review:
 
 
 @dataclass
+class CandidateProposal:
+    text: str
+    mode: CommentMode
+    response_shape: str = ""
+    source_hook: str = ""
+    style_evidence_ids: list[str] = field(default_factory=list)
+    confidence: float = 1.0
+    abstain_reason: str = ""
+    grounding_notes: str = ""
+
+
+@dataclass
 class GeneratedComment:
     text: str
     mode: CommentMode
     provider: str
     warnings: list[str] = field(default_factory=list)
+    candidates: list[CandidateProposal] = field(default_factory=list)
+    plan: Optional[dict] = None
+

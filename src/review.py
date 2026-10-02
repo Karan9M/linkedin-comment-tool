@@ -1,5 +1,6 @@
 import hashlib
 import json
+from difflib import SequenceMatcher
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -11,6 +12,19 @@ from src.paths import FEEDBACK_FILE
 def _stable_id(founder: str, post_text: str, candidate_text: str, decision: str) -> str:
     raw = "|".join([founder.strip(), post_text.strip(), candidate_text.strip(), decision])
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
+
+
+def _edit_magnitude(candidate_text: str, final_text: str, decision: ReviewDecision) -> str | None:
+    """Classify a human edit without pretending it is a quality score."""
+
+    if decision != ReviewDecision.EDIT:
+        return None
+    similarity = SequenceMatcher(
+        None,
+        " ".join(candidate_text.lower().split()),
+        " ".join(final_text.lower().split()),
+    ).ratio()
+    return "light" if similarity >= 0.70 else "substantial"
 
 
 def save_review(
@@ -37,6 +51,11 @@ def save_review(
         "final_text": final_text,
         "decision": decision,
         "reason": review.rejection_reason,
+        "edit_magnitude": _edit_magnitude(
+            review.candidate_text,
+            final_text or "",
+            review.decision,
+        ),
         "quality_warnings": review.quality_warnings,
         "timestamp": datetime.now(timezone.utc).isoformat(),
         # Backward-compatible fields for the first prototype's tests/data.

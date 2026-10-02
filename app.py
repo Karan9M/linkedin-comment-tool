@@ -1,3 +1,4 @@
+from difflib import SequenceMatcher
 import streamlit as st
 
 from src.claims import load_facts, validate_claims
@@ -293,10 +294,24 @@ def main():
         result.engagement_reason
     )
 
+    fit_score = getattr(result, "founder_fit_score", 0.0)
     st.caption(
-        f"Confidence: "
-        f"{result.engagement_confidence:.0%}"
+        f"Founder-fit score: {fit_score:.2f} | Confidence: {result.engagement_confidence:.0%}"
     )
+
+    pos_factors = getattr(result, "positive_factors", [])
+    neg_factors = getattr(result, "negative_factors", [])
+    if pos_factors or neg_factors:
+        with st.expander("Inspect Decision Factors", expanded=(decision_value == "ask")):
+            if pos_factors:
+                st.markdown("**Positive factors (+)**")
+                for factor in pos_factors:
+                    st.markdown(f"- :white_check_mark: {factor}")
+            if neg_factors:
+                st.markdown("**Negative / caution factors (-)**")
+                for factor in neg_factors:
+                    st.markdown(f"- :warning: {factor}")
+
 
     # =====================================================
     # NO AUTOMATIC DRAFT
@@ -422,8 +437,8 @@ def main():
         )
 
         st.caption(
-            "Synthetic calibration examples used to "
-            "help match the founder's commenting behavior."
+            "Candidate-curated synthetic calibration: useful for testing "
+            "response shapes, but not proof of the founder's voice."
         )
 
         for index, example in enumerate(
@@ -440,10 +455,7 @@ def main():
                 )
 
                 st.write(
-                    example.get(
-                        "post",
-                        "",
-                    )
+                    example.get("post_text", "")
                 )
 
                 st.write(
@@ -451,10 +463,7 @@ def main():
                 )
 
                 st.code(
-                    example.get(
-                        "reference_comment",
-                        "",
-                    )
+                    example.get("response", "")
                 )
 
                 if example.get("style_note"):
@@ -504,6 +513,36 @@ def main():
                 )
 
         return
+
+    # -----------------------------------------------------
+    # Contribution Plan & Multiple Candidates
+    # -----------------------------------------------------
+
+    plan = getattr(result.generated_comment, "plan", None)
+    if plan:
+        with st.expander("📌 Contribution Plan & Grounding", expanded=False):
+            st.markdown(f"- **Target Post Hook:** {plan.get('post_hook')}")
+            st.markdown(f"- **Context Type:** `{plan.get('context_type')}`")
+            st.markdown(f"- **Plausible Founder Contribution:** {plan.get('plausible_contribution')}")
+            st.markdown(f"- **Target Response Shape:** `{plan.get('response_shape')}`")
+
+    candidates = getattr(result.generated_comment, "candidates", [])
+    if len(candidates) > 1:
+        st.markdown("**Multiple grounded candidates available:**")
+        cand_labels = [
+            f"Option {i+1} ({c.response_shape.title()}): \"{c.text[:55]}...\""
+            for i, c in enumerate(candidates)
+        ]
+        chosen_idx = st.radio(
+            "Choose a candidate proposal to review or edit:",
+            range(len(candidates)),
+            format_func=lambda i: cand_labels[i],
+            key="candidate_choice_idx",
+        )
+        current_candidate = candidates[chosen_idx]
+        if not st.session_state.editing_comment and st.session_state.edited_text != current_candidate.text:
+            st.session_state.edited_text = current_candidate.text
+            generated_text = current_candidate.text
 
     # -----------------------------------------------------
     # Initialize draft
@@ -577,6 +616,15 @@ def main():
         st.session_state.edited_text.strip()
     )
 
+    if final_text and final_text != generated_text:
+        similarity = SequenceMatcher(
+            None,
+            " ".join(generated_text.lower().split()),
+            " ".join(final_text.lower().split()),
+        ).ratio()
+        mag_label = "Light edit" if similarity >= 0.70 else "Substantial rewrite"
+        st.info(f"**Human edit detected:** {mag_label} ({similarity:.0%} similarity to original AI proposal)")
+
     # =====================================================
     # 6. QUALITY & SAFETY
     # =====================================================
@@ -589,6 +637,7 @@ def main():
         final_text,
         result.comment_mode,
         result.post.text,
+        founder=result.founder,
     )
 
     final_claims = validate_claims(
@@ -736,10 +785,23 @@ def main():
 
     with col3:
 
-        rejection_reason = st.text_input(
-            "Rejection reason",
-            key="rejection_reason",
-            placeholder="Optional reason...",
+        reject_category = st.selectbox(
+            "Rejection category",
+            [
+                "Too generic / AI-sounding",
+                "Wrong tone for this founder",
+                "Wrong context / misunderstood post",
+                "Inaccurate claim / invented fact",
+                "Too long / wordy",
+                "Other",
+            ],
+            key="reject_category",
+        )
+
+        rejection_details = st.text_input(
+            "Optional details",
+            key="rejection_details",
+            placeholder="Specific feedback...",
         )
 
         if st.button(
@@ -747,14 +809,17 @@ def main():
             use_container_width=True,
         ):
 
+            full_reason = (
+                f"{reject_category}: {rejection_details.strip()}"
+                if rejection_details.strip()
+                else reject_category
+            )
+
             review = Review(
                 candidate_text=generated_text,
                 decision=ReviewDecision.REJECT,
                 edited_text=None,
-                rejection_reason=(
-                    rejection_reason.strip()
-                    or "Human rejected draft."
-                ),
+                rejection_reason=full_reason,
                 founder=result.founder,
                 post_text=result.post.text,
                 comment_mode=result.comment_mode,
@@ -766,7 +831,7 @@ def main():
             )
 
             st.success(
-                "Rejection saved as negative feedback."
+                "Rejection saved as structured negative feedback."
             )
 
     # =====================================================
