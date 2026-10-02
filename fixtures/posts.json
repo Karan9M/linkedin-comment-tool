@@ -1,0 +1,155 @@
+[
+  {
+    "id": "fathin_target_1",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "Fireweed AI has been accepted into the Vector\nInstitute's FastLane program.\n\nWe're a small, Indigenous-owned team based in\nWhitehorse, building AI productivity suites that run\nin Canada, stays in Canada, and treats data\nsovereignty as a design constraint rather than a\nfeature. For the governments, consumers,\nbusinesses and public institutions we work with,\nwhere data lives and who controls it isn't a\ncheckbox. It's the whole question.\n\nFastLane connects us with Vector's applied AI\nexpertise and talent network as we move toward\nour commercial launch. We're especially looking\nforward to the evaluation work, because proving\nour systems behave the way we say they do matters\nas much as building them.\n\nWe're extremely grateful to the Vector team for the\nopportunity, and to everyone who's backed us from\nthe North so far.\n\n#SovereignAI #IndigenousDataSovereignty\n#OCAP #VectorInstitute #Yukon",
+    "observed_comment": "W",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_2",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "Junpeng Lao\n\n  • 3rd+\n\nChief Epistemologist at rekursiv.ai\n\n2w • Edited • \n\n\nFollow\nMulti-agent workflows are all the rage. But\nadvancing science takes more than throwing\n10,000 agents at a problem.\n\nOver three days and 6,164 experiments, we at\n@rekursiv.ai reached a new state of the art on\nAndrej Karpathy's NanoChat benchmark:\n📊 0.88982 mean BPB across 10 seeds (a 1.3%\nimprovement over the previous best).\n\nReaching that score required more than raw\ncompute. We had to improve how the research team\nitself worked: Enter 🟢 meta-harness 🟢 \n\nWhat happens when your AI scientist finishes an\nexperiment, but the colleague waiting for its result\nno longer exists?\nAn AI reviewer caught that exact failure in our\nNanoChat campaign: engineer agents tried\nreturning results to researcher sessions that had\nalready closed. The coordinator adapted, routing\nlate results through a supervisor and durable\nrecords.\n\nThat feedback loop is where automated science gets\ninteresting. Along the way, we were debugging the\nresearch team itself:\n• Who checks the evidence before accepting a run?\n• How do results reach the next scientist?\n• What happens when an asynchronous handoff\nbreaks?\n\nTo connect hypotheses, experiments, and evidence,\nwe built and used Trackinizer\n(https://lnkd.in/eMDS3F-c). When agents asked,\n“What should we test next, and what would make\nus change our mind?”, both humans and models\ncould inspect the chain of evidence and steer the\nnext run.\n\n6,164 experiments. NanoChat SoTA. And a research\nprocess that learns from its failures.\n\nIf you are building research agents, which handoffs\nkeep breaking in your setup?\n\n🔗 Read the full story: https://lnkd.in/e3gChbpe\n🧪 Try the recipe: https://lnkd.in/e5m4U8am\n💬 Join our Discord: https://lnkd.in/ez4SQyMx\n\n\nAdditional:\nWe sent a swarm of AI agents to solve Karpathy’s\nNanoChat benchmark, and they crushed SoTA in 3\ndays.\n\nWe built our own harness on top of a graph database\nto do auto-autoresearch, each iteration learning\nfrom mistakes to do research better.\nThe team wrote >15,000 entries.",
+    "observed_comment": "Interesting",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_3",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "Two chapters closing and opening in the same week.\n\nI just wrapped up my internship in Trade Finance at\nLHV. Spent it inside the mechanics of how two\ncompanies actually trust each other on paper.\nLearning through guarantee letters, and everything\na bank has to be sure of before putting its name\nbehind someone else's deal.\n\nNow I’m already in Milan, where I'll spend the next\nfour months at Bocconi on exchange. Chasing\ncourses Estonia doesn't offer and a wider view of\nhow banking and finance gets done elsewhere. Also\nthe first time living alone somewhere new. Great\ntime to learn more about myself.. we'll see what that\nsurfaces.\n\nImmeasurably grateful to the LHV family and\nexcited for what’s coming ahead.",
+    "observed_comment": "canon event incoming 🙂‍↕️",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_4",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "Context is King is back!\n\nOur sixth edition, this time in Paris on Tuesday\nSeptember 22, the evening before AI Engineer Paris.\n\nImplementation stories and live demos from\nengineers building AI agents on real data.\n\nCo-organized with Elaia, with first speakers from\nCerto, Aiven and Amundi. More confirming over the\nnext two weeks.\n\nSpace is limited and all past editions have been sold\nout. RSVP in the comments!",
+    "observed_comment": "Aaro Isosaari maybe a live \"same data, different\ncontext\" challenge 🤔?  two teams get the same\nmessy dataset and goal, then unpack why their\nagents made different calls.",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_5",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "The benchmark for non-verifiable domains in AI is\noften the opinions or perspectives of humans. That\nis how we determine whether writing or an idea or a\npitch is good in the real world.\n\nAnd we social scientists have spent a century\nfiguring out how to measure & benchmark this stuff:\ntime for AI folks to read up on qualitative research\nmethodology!",
+    "observed_comment": "I’ve noticed that when you bring qualitative\nmethods into tech teams, it’s often a culture shock\nbut the mix leads to some really creative solutions\nyou wouldn’t get otherwise.",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_6",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "The best \"raw\" frontier model for document parsing\nis gemini 3 flash, but the issue is that since then the\nflash models have gotten 3x more expensive while\nflatlining on visual recognition across complex\ndocuments.\n\nThis has been the case for every frontier model\nincluding the latest OpenAI/Anthropic models - see\nthe diagram below for GPT (since then we've also\nbenchmarked 5.6) \n\nIn the meantime, hybrid approaches like LlamaParse\nthat blend specialized VLMs with a text engine offer\nbetter performance; our own LlamaParse accuracy\nhas increased 15% over tables and charts.\n\nIf you have document OCR needs and are thinking\nabout using a frontier model, you might as well\ncome check out LlamaParse!\nhttps://lnkd.in/g9Wpqn7w\n\nWe have a full eval harness through ParseBench that\nyou can configure over your own docs:\nhttps://www.parsebench.ai/",
+    "observed_comment": "I wonder whether the better evaluation unit is the\npage class rather than the document average.\n\nScanned text, forms, tables and charts fail\ndifferently. \n\nDid most of the gain come from routing each class to\nthe right processor, or from the specialised parser\ninside each route?",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_7",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "Recently I have been trying to figure out how much\nof the evals process can be \"automated\" with AI.\nSurely we should be able to automate a lot; AI has\ngotten so good. Unfortunately you can't fully\nautomate your evals! \n\nPlenty of vendors will sell you the opposite. Point\ntheir LLM-powered tool at your agent traces, and\nit'll tell you where your application is broken and fix\nit for you. I would love for this to be true.\n\nThese tools can find some errors. But they cannot\nfind all! For one reason, what \"good\" means for your\nproduct lives in your head. It’s not in the traces.\nAnything you haven't externalized, into the traces\nor the prompt, the agent will never find. \nMoreover, if a tool could fully build and fix your\nproduct for you, it could do the same for everyone\nelse, all of your competitors. There would be nothing\nleft to set your product apart. Your judgment is the\nonly differentiating factor you have.\n\nSo the question becomes: what can AI do for evals, if\nit can't do them end-to-end? It can accelerate your\nreview of your traces! It can\n- Build a custom UI for you to review your traces\n- Intelligently cluster and sample which traces to\nuse\n- Take some of your annotations or labeled failures,\nreflect on them, and try to find other traces that the\nsame annotations would apply to\n\nMy general rule of thumb is: I've found it's far\neasier to say what I think and have the agent scale\nthat out across many traces than to sit and validate\nthe agent's taste (i.e., have the agent do error\nanalysis from scratch). \n\nLearning to do this, finding what's broken and\nknowing what counts as a mistake, is the core of\nwhat Hamel and I teach in our AI Evals course. If\nyou want to go deeper on evals, the final cohort of\nthe year starts Oct 10: https://lnkd.in/gfp5gvBW",
+    "observed_comment": "I think the label needs to carry more than the failure\ntype. It should also record which decision was\naffected, who owns it, and what recovery costs. \n\nOtherwise AI can scale the taxonomy without\nhelping the team decide which failures matter first.",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "fathin_target_8",
+    "target_founder": "Fathin",
+    "source_type": "observed_comment_target",
+    "post_text": "While building Braintrust I’ve been thinking about\nwhat evals are good at, what they should be used\nfor, and how they differ from other parts of the\nsoftware development lifecycle, like tests.\n\nThough it’s tempting to conflate evals and tests,\ndoing so confuses the differences between them.\n\nHere’s how we think about it at Braintrust:\n- A test is about if the thing can work\n- An eval is about what the thing can and cannot do\n- A mature eval practice is about what the thing\nshould be doing, how often, and in what\ncircumstances\n\nThe last one is important when building agents. You\nneed to test that something is working, measure\nwhat it’s capable of, then take this data and use it to\nbuild new behaviors for your agent.\n\nIn traditional software you use tests to understand\ncorrectness and observability to understand\nperformance. Correctness captures whether or not\nyour software can work as expected, and\nperformance measures how well your software does\nthat work in the real world.\n\nFor agents, correctness also requires information\nabout how the agent works. Is it calling the right\ntools? Is it surfacing the right information?\n\nThis is how you measure if an agent is working, and\ntests still have their place here. You shouldn’t\nreplace an eval with a test, but you shouldn’t stop\ntesting altogether either.\n\nBut what if the way the agent works needs to\nchange? Or what if you want to use system data to\ninform how it should change?\n\nAll of this goes beyond the capabilities of a test.\nWhat you want to know is what an agent is capable\nof, and whether this behavior is correct in novel\nsituations. This is why evals exist.\n\nAs agents have grown in complexity and power this\nhas become critical. A mature eval suite should tell\nyou what the thing can do, and document what it\ndoes when it is exhibiting new behavior. Then you\ncan use that data to determine what it should be\ndoing, so you can improve the quality of the agent as\nthese new behaviors emerge.\n\nWith this in mind, you can see why evals and tests\nare separate things, both of which have their place.\n\nA healthy eval practice means that each time a user\nencounters unexpected behavior, teams can save it\nin a dataset and add it to their eval suite.\n\nA healthy testing practice means that as you update\nthe implementation of an agent based on those\nevals, you can write tests that assert it's working\nwell.\n\nAt Braintrust we’re focused on the evals. We want\nour customers to observe agent behavior, turn those\ntraces into evals, and build the continuous loop of\nagent improvement. We envision a world of active\nobservability, in which this eval practice supports\nthe automatic surfacing of issues before a team\nknows to look for them.\n\nIf you're interested in building evals, Braintrust can\nhelp: https://lnkd.in/gRv7ASXF",
+    "observed_comment": "The bit I keep coming back to is valid completion. An\nagent can reach the right answer and still take an\nunacceptable route, skip a review point, or leave no\nrecoverable state. \n\nThose cases belong in the eval set too. They show\nwhat the workflow is allowed to do, not only\nwhether the output looks right.",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_1",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "A month ago I started my studies at Rīgas\nEkonomikas augstskola - Stockholm School of\nEconomics in Riga. So far I have:\n\n- Achieved a scolarship in honour of outstanding\nperformance\n- Bombed a midterm\n- Studied (shocking, I am aware)\n- Found out and taken advantage of the price of\nbeers in Riga\n- Gained an amazing community of driven peers\n\n1 Month in, Here's to many more.",
+    "observed_comment": "bro made it out of Tabasalu",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_2",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "We beat Estonia! 🇱🇻 \n\nAtleast in the business track of Vibe_Sprint 2026…\n😅\n\nHUGEEE thanks to Startup Garage and TalTech\nInnovation for hosting the international hackathon\n“Vibe_Sprint 2026” in Tallinn, Estonia!\n\nWe had the chance to represent Latvia on the big\nstage - a 2 day sprint in TalTech showed who really\nknows how to make vibe coded tech and sell it. 💸\nWe (we named ourselves “Goldman Stocks”, pun\nintended) managed to vibe code an AI management\ntool for gardening and landscaping companies. It\nfeatures task, plant, area, worker and so many\nmore AI integrated management tools. And of\ncourse, we intend to develop the product further\nand actually sell it… 😏\n\nBut the best part? The CONNECTIONS! 💫\n\nI am very grateful for the chance to meet so many\namazing people - both founders and techies, both\nEstonian and international. 🌍\n\nAnd, of course, WE WON!! 🥳\nThanks to my teammates - Kristers Zvīdris &\nGustavs Saulītis\nAnnnddd just some of the mentors, that helped us\ndevelop - Rico Soots, Nadim Metwalli, Martti\nPraks, Mihkel Allorg, Ucha Vekua, Bodo Buschick",
+    "observed_comment": "young goats",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_3",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "Uku Joost Annus Raises €615K to Scale AI-Powered\nMobile App Building\n\nEstonian startup bilt.me has raised €614,900\n($700,000) in pre-seed funding to expand its AI-\nnative platform that lets users turn an idea into a\nworking mobile application. The round was led by\nSuperhero Capital, with participation from Bolt\nfounder Markus Villig and Lightyear founder\nMartin Sokk.\n\nFounded in August 2025 by Uku Joost Annus, Kevin\nAkkermann and Karl Kiilaspää, bilt.me began as a\nhackathon project in Tallinn before evolving into a\nplatform focused specifically on native mobile\napplications.\n\nIts AI agent allows users to describe an app in plain\nlanguage, generate a native iOS or Android\napplication, preview it on a phone and work toward\npublishing it on the App Store or Google Play. The\nplatform also includes payments, cloud\ninfrastructure and app-sharing capabilities, while\nallowing users to export React Native code.\n\nThe early traction is notable: bilt.me says thousands\nof people are already building on the platform,\nwhile revenue has surpassed six figures in annual\nrecurring revenue and doubled month over month\nfor three consecutive months. The company plans to\nuse the new capital for global expansion and further\nproduct development.\n\nThe bigger shift: AI is moving from helping\ndevelopers write code to taking users from an idea\nto a published mobile product.\n\n#AI #ArtificialIntelligence #StartupNews\n#BiltMe #MobileApps #AppDevelopment\n#VentureCapital #Estonia #Entrepreneurship\n#TechStartup",
+    "observed_comment": "W Uku Joost Annus",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_4",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "\"How do you get ideas for posts?\"\n\nPeople ask me this a lot, here's how:\n\n1. I have a doc where I store ideas throughout the\nday/week, not full drafts, just a quick note on the\nidea for the specific post (notes app is another great\nspot to jot down ideas).\n\n2. I take lots of pictures, especially for LinkedIn this\nis helpful since they seem to boost posts with\nphotos. I get a lot of my post ideas from scrolling\nthrough my camera roll and building a post off of a\nrecent experience (that I have a photo of).\n\n3. pull from different buckets. Personal life, work\nlife, humor, learnings, experiences/stories, hot\ntakes/beliefs, etc. etc. \n\n4. start small. If you have a full time job, you\nprobably don't have an hour/day to write a\nLinkedIn post (which is how long it used to take me\nwhen I was getting started). I started with posting\n3 times a week and eventually ramped it up to more.\n\n5. be consistent, there's a lot of different opinions\nabout how many times a week you should post. I\ndon't think it matters that much, whether it's 1 time\nor 5 times a week, pick a number and commit to it. \n\n6. follow cool people, I get a lot of inspiration for\nposts from seeing what other people are doing on\nhere.\n\n\nThis is what I've picked up from posting\nconsistently on here for the past year (ish).\n\nAt the end of the day, there's pretty much zero\ndownside and unlimited upside to posting on here,\nit's dramatically changed my life in the short year\nthat I've been doing it.\n\n\"Anyone can cook (and post on LinkedIn), but only\nthe fearless can be great\" - Chef Gusteau\n\n\n(picture I randomly took of my laptop in starbucks\nbefore I shipped my first LinkedIn post lol)",
+    "observed_comment": "i just use Byro",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_5",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "Same model. Completely different result.\n\nI kept asking myself: I use the same Fable and Astra\nmodels as everyone else. I burn through my tokens.\nAnd my website designs still look bad.\n\nPeople who have done this for years get great\nresults with the exact same models.\n\nIt's not the model. It's their prompts, their\nworkflows, their taste.\n\nSo we built Edge. The people who outperform you\n10x package how they work as a skill, and your\nagent installs it.\n\nI spent a whole weekend building a video engine. A\nfriend's skill got me a better result in 10 seconds.\n\ngetedge.cc",
+    "observed_comment": "awesome!",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_6",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "Super excited to share 📢\nAnother exit to add to my growing portfolio 😉💪\n\nBack in early 2024, I invested in Fathom.ai,  a small\nbut sharp team building AI-powered meeting\nintelligence. Today, that bet has paid off: Fathom\nhas been acquired by Superhuman, the AI\nproductivity platform used by 40M+ people, in a\ndeal valued over $400M.\n\nWhat stood out to me early on was the team's\nconviction that the real value of a meeting isn't the\nnotes, it's what happens after: the follow-ups, the\ndecisions, the execution. That thesis clearly\nresonated, and now it gets to scale inside\nSuperhuman's ecosystem. 🙌\n\nGrateful to have backed this one from the early\ndays, and excited to see where the combined\nplatform goes next. Congratulations to Richard\nWhite and the entire Fathom team on this incredible\noutcome.\n\n#VentureCapital #AI #Exits #Investing\n#Superhuman #Fathom",
+    "observed_comment": "congrats!",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_7",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "Every founder wants a Donna. Almost nobody\nknows where to find one.\n\nShe's the reason Harvey never drops a ball. She\nknows what he needs before he does, she handles\nthe things he doesn't have time to handle, and she's\nthe only one in the building who tells him when he's\nwrong.\n\nNobody watches that show and thinks \"I'd like a\ndiary manager.\"\n\nThe problem is that Donna isn't a job title. You can't\npost a role for her.\nSo I started training them.\n\nI'm Daisy. I was a PA for years to founders,\ninfluencers and high net worth individuals, back\nwhen I was the one rebooking flights at 11pm and\ntalking my way into fully booked restaurants.\nFounders kept asking where they could find\nsomeone like me, and I never had a good answer.\n\nThat's The Executive Woman. We train Personal\nAssistants properly, then match them with founders\non personality rather than just experience.\n\nIf you're looking for your Donna, there's a\ndashboard where you can post what you're after\nand see who fits.\n\nhttps://lnkd.in/ei_GbrWy",
+    "observed_comment": "W donna",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_8",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "we need to bring the cubicle back\n\nopen floor plans are too noisy and distracting when\nyou’re voice prompting across multiple parallell\nagent sessions\n\nimagine the generational flow state lock-in you\ncould achieve inside this bad boy",
+    "observed_comment": "Facts!",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  },
+  {
+    "id": "rico_target_9",
+    "target_founder": "Rico",
+    "source_type": "observed_comment_target",
+    "post_text": "Underrated marketing hack:\n\n\nGet merch for your brand so you can wear it and\nbecome a walking billboard.\n\n- increases brand awareness\n- starts interesting conversations\n- anytime you post on social, the effects double\n\nCheers 🥂",
+    "observed_comment": "adding this to my to do list",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available."
+  }
+]

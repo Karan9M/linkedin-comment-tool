@@ -1,0 +1,349 @@
+[
+  {
+    "id": "fathin_post_voice_1",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "Anthropic, OpenAI, Grok all getting COOKED\nrn! \n\nStay Safe Chat.",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_2",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "I run 25+ Grok Bots inside Codes Devs.\n\nIt looks like a small company in the sidebar.\nResearch. Ops. Publishing. Chief of Staff.\n\nAnd the idea is catching fire: a post\nrecirculating a 10-to-20-Bot setup passed\nfive million views on X.\n\nI get it. The market wants the roster.\nHonestly, so do I.\n\nBut SpaceXAI own documentation says a\nmember’s Bots share one cloud computer:\n\nSame files.\nSame browser sessions.\nSame sign-ins.\nSame permissions.\n\nThat was the part I underestimated.\n\n25 roles do not create 25 security\nboundaries.\n\nSo my rule now is simple:\n— one clear outcome per Bot\n— minimum access\n— approval before it sends, pays, or\npublishes\n— a receipt before I call anything done\n— a human who owns the consequence\n\nThe org chart is fun.\nThe operating boundary is the actual\nproduct.\n\nI wrote up what I’m learning while running\nthis setup:\nhttps://lnkd.in/dJvfXFJD\n\nIf you run Bots too: what broke first\naccess, approvals, evidence, or recovery?",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_3",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "Your agent might not need a better memory.\n\nIt might need to forget more. Word!\n\nBuilding AgentSIM made this painfully clear.\nA one-time code and a cleanup receipt can\nbelong to the same run, but giving them the\nsame lifetime would be mad!!\n\nAgent memory isn’t just storage. It’s\ndeciding what deserves to survive, who can\ntrust it, and how it gets corrected or\ndeleted.\n\nWhat’s your agent still holding onto that\nshould have disappeared already?",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_4",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "THE AGENT SAYS IT'S DONE.\n\nWOULD THE SYSTEM IT TOUCHED\nAGREE?\n\nA fluent answer can hide the wrong record, a\nskipped required check, or an uncertain tool\nresult treated as success.\n\nBefore I grant more access, I need proof of\nthe external outcome, the authority used,\nthe recovery path, and the stopping\ncondition.\n\nI wrote down the release gate I use.\n\nWhat evidence would prove your agent\nactually finished?",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_5",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "A CALENDAR LINK IS A WEIRD WAY TO\nSTART A CONVERSATION.\n\n\nMost personal sites tell u who someone is,\nthen immediately ask for ur time.\n\nSometimes the problem matters before it is\nready for a brief or a call.\n\nSo I built Talk to Fathin.  (Still cooking.\nApparently, helping before asking for a call is\na GPU problem now?? 😆)\n\nBring it an unfinished product or technical\ndecision. If the question needs current\ninformation, ask it to research the web and\nshow its sources.\n\nYou can challenge the answer and turn the\nuseful part into a brief for yaself as well.\n\nhttps://fathin.ee/talk/",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_6",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "A CALENDAR LINK IS A WEIRD WAY TO\nSTART A CONVERSATION.\n\n\nMost personal sites tell u who someone is,\nthen immediately ask for ur time.\n\nSometimes the problem matters before it is\nready for a brief or a call.\n\nSo I built Talk to Fathin.  (Still cooking.\nApparently, helping before asking for a call is\na GPU problem now?? 😆)\n\nBring it an unfinished product or technical\ndecision. If the question needs current\ninformation, ask it to research the web and\nshow its sources.\n\nYou can challenge the answer and turn the\nuseful part into a brief for yaself as well.\n\nhttps://fathin.ee/talk/",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_7",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "YOUR AGENT GRAPH HAS AMNESIA.\n\n\nWhile writing about graph engineering, I kept\ncoming back to one question:\n\nWhat survives when the process restarts?\n\nA workflow graph defines where work may go\nnext. It does not automatically preserve\nwhich node ran, which artifact it used, why a\nroute fired, or what failed.\n\nThat belongs in a durable run record.\n\nA knowledge graph is different. It connects\nfacts and entities, but a relationship is not\nevidence. You still need to check the source.\n\nI wrote the field guide I wanted while making\nthese decisions. It covers the parts box-\nand-arrow diagrams tend to hide: state,\nhandoffs, recovery, verification, and human\nauthority.\n\nThe full field guide is in the first comment.\n👇\n\nBefore adding another node, ask:\n\nWhat does the graph make explicit that one\naccountable loop cannot?\n\n#AgentEngineering #ProductionAI",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_post_voice_8",
+    "person": "Fathin",
+    "source_type": "post",
+    "text": "Europe gave AI a deadline.\n\n>> Most companies still haven’t given it an\nowner.\n\n>> From 2 August, AI Act transparency\nduties start applying to certain AI systems.\n\n>> The legal interpretation belongs with\ncounsel. But the expensive part is often\noperational:\n\n>> Where is AI being used? What does the\nuser see? What gets recorded? What happens\nwhen it fails? Who reviews it? Who can stop\nit?\n\n>> A policy document cannot answer those\nquestions inside the product.\n\n>> A working system can.\n\nCodesDevs helps teams turn one important\nAI project from a convincing prototype into\na working pilot with the data, integrations,\npermissions, evaluation, failure handling,\nhuman review, documentation and handover\naround it.\n\n>> Imagine this outside the European\nCommission this week.\n\n>> If one project cannot wait for the full\nteam to be hired, message me “pilot”.\n\n#AIAct #ProductEngineering",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "personal voice/context"
+  },
+  {
+    "id": "fathin_comment_1",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "W",
+    "comment_mode": "quick_reaction",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Fireweed AI has been accepted into the Vector\nInstitute's FastLane program.\n\nWe're a small, Indigenous-owned team based in\nWhitehorse, building AI productivity suites that run\nin Canada, stays in Canada, and treats data\nsovereignty as a design constraint rather than a\nfeature. For the governments, consumers,\nbusinesses and public institutions we work with,\nwhere data lives and who controls it isn't a\ncheckbox. It's the whole question.\n\nFastLane connects us with Vector's applied AI\nexpertise and "
+  },
+  {
+    "id": "fathin_comment_2",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "Interesting",
+    "comment_mode": "quick_reaction",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Junpeng Lao\n\n  • 3rd+\n\nChief Epistemologist at rekursiv.ai\n\n2w • Edited • \n\n\nFollow\nMulti-agent workflows are all the rage. But\nadvancing science takes more than throwing\n10,000 agents at a problem.\n\nOver three days and 6,164 experiments, we at\n@rekursiv.ai reached a new state of the art on\nAndrej Karpathy's NanoChat benchmark:\n📊 0.88982 mean BPB across 10 seeds (a 1.3%\nimprovement over the previous best).\n\nReaching that score required more than raw\ncompute. We had to improve how the research te"
+  },
+  {
+    "id": "fathin_comment_3",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "canon event incoming 🙂‍↕️",
+    "comment_mode": "humorous_personal",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Two chapters closing and opening in the same week.\n\nI just wrapped up my internship in Trade Finance at\nLHV. Spent it inside the mechanics of how two\ncompanies actually trust each other on paper.\nLearning through guarantee letters, and everything\na bank has to be sure of before putting its name\nbehind someone else's deal.\n\nNow I’m already in Milan, where I'll spend the next\nfour months at Bocconi on exchange. Chasing\ncourses Estonia doesn't offer and a wider view of\nhow banking and finance gets "
+  },
+  {
+    "id": "fathin_comment_4",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "Aaro Isosaari maybe a live \"same data, different\ncontext\" challenge 🤔?  two teams get the same\nmessy dataset and goal, then unpack why their\nagents made different calls.",
+    "comment_mode": "thoughtful_question",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Context is King is back!\n\nOur sixth edition, this time in Paris on Tuesday\nSeptember 22, the evening before AI Engineer Paris.\n\nImplementation stories and live demos from\nengineers building AI agents on real data.\n\nCo-organized with Elaia, with first speakers from\nCerto, Aiven and Amundi. More confirming over the\nnext two weeks.\n\nSpace is limited and all past editions have been sold\nout. RSVP in the comments!"
+  },
+  {
+    "id": "fathin_comment_5",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "I’ve noticed that when you bring qualitative\nmethods into tech teams, it’s often a culture shock\nbut the mix leads to some really creative solutions\nyou wouldn’t get otherwise.",
+    "comment_mode": "add_insight",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "The benchmark for non-verifiable domains in AI is\noften the opinions or perspectives of humans. That\nis how we determine whether writing or an idea or a\npitch is good in the real world.\n\nAnd we social scientists have spent a century\nfiguring out how to measure & benchmark this stuff:\ntime for AI folks to read up on qualitative research\nmethodology!"
+  },
+  {
+    "id": "fathin_comment_6",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "I wonder whether the better evaluation unit is the\npage class rather than the document average.\n\nScanned text, forms, tables and charts fail\ndifferently. \n\nDid most of the gain come from routing each class to\nthe right processor, or from the specialised parser\ninside each route?",
+    "comment_mode": "thoughtful_question",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "The best \"raw\" frontier model for document parsing\nis gemini 3 flash, but the issue is that since then the\nflash models have gotten 3x more expensive while\nflatlining on visual recognition across complex\ndocuments.\n\nThis has been the case for every frontier model\nincluding the latest OpenAI/Anthropic models - see\nthe diagram below for GPT (since then we've also\nbenchmarked 5.6) \n\nIn the meantime, hybrid approaches like LlamaParse\nthat blend specialized VLMs with a text engine offer\nbetter perfor"
+  },
+  {
+    "id": "fathin_comment_7",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "I think the label needs to carry more than the failure\ntype. It should also record which decision was\naffected, who owns it, and what recovery costs. \n\nOtherwise AI can scale the taxonomy without\nhelping the team decide which failures matter first.",
+    "comment_mode": "add_insight",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Recently I have been trying to figure out how much\nof the evals process can be \"automated\" with AI.\nSurely we should be able to automate a lot; AI has\ngotten so good. Unfortunately you can't fully\nautomate your evals! \n\nPlenty of vendors will sell you the opposite. Point\ntheir LLM-powered tool at your agent traces, and\nit'll tell you where your application is broken and fix\nit for you. I would love for this to be true.\n\nThese tools can find some errors. But they cannot\nfind all! For one reason, "
+  },
+  {
+    "id": "fathin_comment_8",
+    "person": "Fathin",
+    "source_type": "comment",
+    "text": "The bit I keep coming back to is valid completion. An\nagent can reach the right answer and still take an\nunacceptable route, skip a review point, or leave no\nrecoverable state. \n\nThose cases belong in the eval set too. They show\nwhat the workflow is allowed to do, not only\nwhether the output looks right.",
+    "comment_mode": "add_insight",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "While building Braintrust I’ve been thinking about\nwhat evals are good at, what they should be used\nfor, and how they differ from other parts of the\nsoftware development lifecycle, like tests.\n\nThough it’s tempting to conflate evals and tests,\ndoing so confuses the differences between them.\n\nHere’s how we think about it at Braintrust:\n- A test is about if the thing can work\n- An eval is about what the thing can and cannot do\n- A mature eval practice is about what the thing\nshould be doing, how o"
+  },
+  {
+    "id": "rico_comment_1",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "bro made it out of Tabasalu",
+    "comment_mode": "humorous_personal",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "A month ago I started my studies at Rīgas\nEkonomikas augstskola - Stockholm School of\nEconomics in Riga. So far I have:\n\n- Achieved a scolarship in honour of outstanding\nperformance\n- Bombed a midterm\n- Studied (shocking, I am aware)\n- Found out and taken advantage of the price of\nbeers in Riga\n- Gained an amazing community of driven peers\n\n1 Month in, Here's to many more."
+  },
+  {
+    "id": "rico_comment_2",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "young goats",
+    "comment_mode": "humorous_personal",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "We beat Estonia! 🇱🇻 \n\nAtleast in the business track of Vibe_Sprint 2026…\n😅\n\nHUGEEE thanks to Startup Garage and TalTech\nInnovation for hosting the international hackathon\n“Vibe_Sprint 2026” in Tallinn, Estonia!\n\nWe had the chance to represent Latvia on the big\nstage - a 2 day sprint in TalTech showed who really\nknows how to make vibe coded tech and sell it. 💸\nWe (we named ourselves “Goldman Stocks”, pun\nintended) managed to vibe code an AI management\ntool for gardening and landscaping companies."
+  },
+  {
+    "id": "rico_comment_3",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "W Uku Joost Annus",
+    "comment_mode": "quick_reaction",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Uku Joost Annus Raises €615K to Scale AI-Powered\nMobile App Building\n\nEstonian startup bilt.me has raised €614,900\n($700,000) in pre-seed funding to expand its AI-\nnative platform that lets users turn an idea into a\nworking mobile application. The round was led by\nSuperhero Capital, with participation from Bolt\nfounder Markus Villig and Lightyear founder\nMartin Sokk.\n\nFounded in August 2025 by Uku Joost Annus, Kevin\nAkkermann and Karl Kiilaspää, bilt.me began as a\nhackathon project in Tallinn be"
+  },
+  {
+    "id": "rico_comment_4",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "i just use Byro",
+    "comment_mode": "humorous_personal",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "\"How do you get ideas for posts?\"\n\nPeople ask me this a lot, here's how:\n\n1. I have a doc where I store ideas throughout the\nday/week, not full drafts, just a quick note on the\nidea for the specific post (notes app is another great\nspot to jot down ideas).\n\n2. I take lots of pictures, especially for LinkedIn this\nis helpful since they seem to boost posts with\nphotos. I get a lot of my post ideas from scrolling\nthrough my camera roll and building a post off of a\nrecent experience (that I have a p"
+  },
+  {
+    "id": "rico_comment_5",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "awesome!",
+    "comment_mode": "quick_reaction",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Same model. Completely different result.\n\nI kept asking myself: I use the same Fable and Astra\nmodels as everyone else. I burn through my tokens.\nAnd my website designs still look bad.\n\nPeople who have done this for years get great\nresults with the exact same models.\n\nIt's not the model. It's their prompts, their\nworkflows, their taste.\n\nSo we built Edge. The people who outperform you\n10x package how they work as a skill, and your\nagent installs it.\n\nI spent a whole weekend building a video engi"
+  },
+  {
+    "id": "rico_comment_6",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "congrats!",
+    "comment_mode": "quick_reaction",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Super excited to share 📢\nAnother exit to add to my growing portfolio 😉💪\n\nBack in early 2024, I invested in Fathom.ai,  a small\nbut sharp team building AI-powered meeting\nintelligence. Today, that bet has paid off: Fathom\nhas been acquired by Superhuman, the AI\nproductivity platform used by 40M+ people, in a\ndeal valued over $400M.\n\nWhat stood out to me early on was the team's\nconviction that the real value of a meeting isn't the\nnotes, it's what happens after: the follow-ups, the\ndecisions, the "
+  },
+  {
+    "id": "rico_comment_7",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "W donna",
+    "comment_mode": "humorous_personal",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Every founder wants a Donna. Almost nobody\nknows where to find one.\n\nShe's the reason Harvey never drops a ball. She\nknows what he needs before he does, she handles\nthe things he doesn't have time to handle, and she's\nthe only one in the building who tells him when he's\nwrong.\n\nNobody watches that show and thinks \"I'd like a\ndiary manager.\"\n\nThe problem is that Donna isn't a job title. You can't\npost a role for her.\nSo I started training them.\n\nI'm Daisy. I was a PA for years to founders,\ninflue"
+  },
+  {
+    "id": "rico_comment_8",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "Facts!",
+    "comment_mode": "quick_reaction",
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "we need to bring the cubicle back\n\nopen floor plans are too noisy and distracting when\nyou’re voice prompting across multiple parallell\nagent sessions\n\nimagine the generational flow state lock-in you\ncould achieve inside this bad boy"
+  },
+  {
+    "id": "rico_comment_9",
+    "person": "Rico",
+    "source_type": "comment",
+    "text": "adding this to my to do list",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "URL not recorded in raw research board; add before submission if available.",
+    "evidence_role": "commenting voice evidence",
+    "target_post_excerpt": "Underrated marketing hack:\n\n\nGet merch for your brand so you can wear it and\nbecome a walking billboard.\n\n- increases brand awareness\n- starts interesting conversations\n- anytime you post on social, the effects double\n\nCheers 🥂"
+  },
+  {
+    "id": "byro_brand_post_1",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text:\nsome personal news: Byro got accepted into\nTooEarly Ventures validation programme.\n\nfinally, “you’re too early” came with a\nwelcome email.\n\nthere are five of us now, building an AI head\nof content for B2B teams.\n\nwe want to help teams turn the knowledge\ninside their company into content without\nmaking everyone take on a second job in\nmarketing.\n\nthe next step is getting closer to the people\nwe’re building for. understanding what fits\ninto their working week, what saves them\ntime, and what we’ve made unnecessarily\ncomplicated.\n\ni suspect that last category will be humbling.\n\nexcited to work through it with the\nTooEarly team. thank you for having us.\n\nW’s in the chat",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_2",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text\nByro is now five people.\n\nlooking for six and seven. 6️⃣ 7️⃣ \n\nspecifically:\n\nsomeone technical who likes building and\nshipping software\n\nsomeone in marketing who can turn a good\nidea into something people actually notice\n\nwe’re building an AI head of content for\nB2B teams, helping turn company expertise\ninto content that drives revenue. \n\nthere’s plenty to build, test, break, fix, and\ntell people about.\n\nopen to internships too. if you’re early in\nyour career, show us something you’ve made,\na project you’ve worked on, or an idea you\ncouldn’t leave alone.\n\na side project or a small campaign gives us\nsomething real to talk about.\n\nmessage me with what you’d like to work on,\nyour availability, and something you’re proud\nof. we’ll talk scope, setup and compensation\ndirectly.\n\nor send this to the person you’d immediately\nwant on your own team.\n\nfive people in. two seats open. still early\nenough to have strong opinions about the\nwhole thing 🤝",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_3",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text\nour fake funding announcement brought Byro\nreal users.\n\n4,200 likes.\n1,000 new followers\nteams from our ''potential users'' slide\nactually signing up.\n\nsomeone even sent us €100\n\nwe've retrospectively decided this was a\nmarketing strategy.",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_4",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text\n\nsome personal news: proud to announce Byro\nhas closed €20 in strategic angel funding.\n\nafter being rejected by YC, Antler, and the\nTalTech lecture hall wifi, we decided to take\ndestiny into our own hands.\n\nthe round was heavily oversubscribed by:\n- grandma (€10 cash, unconditional SAFE)\n- my technical co-founder finding a €10 bill in\nhis winter jacket\n\nthis extends our runway by approximately 3\nred bulls.\n\ngrateful to everyone who believed in the\nvision when it was just two guys sitting on\nthe floor staring at codex and claude code. \n\nbig things coming 🤝",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_5",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Post 5\nText\n\ngetting a product to 70% is exciting.\n\ngetting from 70% to launch is where most\nfounders secretly lose their minds.\n\nthe first part feels like magic: you sketch\nworkflows, wire up agents, and see the core\nloop function for the first time. you feel like\nyou’re flying.\n\nthen you hit the remaining stretch, and you\nrealize it is 90% unglamorous friction:\n\nhunting down edge cases where an auth\ntoken randomly expires.\nrewriting user drop-off flows because\nsomeone clicked back instead of forward.\nstaring at error logs at midnight trying to\nunderstand why webhooks failed silently.\nfixing broken state handling across basic\nnavigation.\n\nnone of this feels like building the future. it\nfeels like plumbing.\n\nbuilding Byro in tallinn at 19, this is the\nbiggest operational difference i’ve noticed\nbetween talking about software and actually\nshipping it.\n\nanyone can build a demo that works in a\nrecorded video.\n\nwhat separates real software from a\nweekend prototype is having the patience to\nfix the boring details nobody will ever\napplaud you for.",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_6",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text \n\nwe killed a profitable agency doing 4-figure\nMRR to sit on the floor building software.\n\nthe reason wasn't that the agency was\nfailing. it was the delivery bottleneck:\n\nevery time we took on a new B2B client for\nexecutive positioning, 80% of the work was\nrepetitive manual data plumbing:\n- pulling signal from podcasts, sales calls, and\ncustomer notes\n- matching it to what target buyers were\nactively talking about\n- ghostwriting from scratch every single week\n\nit worked, but it didn't scale past our own\ncalendar hours.\n\nthat's why we switched to building Byro as\nsoftware. \n\nif your service business relies on you manually\ndoing repetitive pattern matching, you don't\nhave an agency problem. you have a product\nwaiting to be built.",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_7",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text\n\nthe best B2B marketing right now looks\ncloser to a high-end streetwear drop than\nenterprise software.\n\nwhen The Wall Street Journal wrote about\ncompanies hiring storytellers for $270K+,\nhalf of tech twitter laughed.\n\nmeanwhile teams like Clay took that exact\nplaybook and turned outbound into culture.\n\nin the baltics and europe, we’re obsessed\nwith engineering depth. we build solid\narchitecture, optimize database queries, and\nthen write marketing copy that sounds like a\ncompliance manual.\n\nconsumer brands understand something\ntechnical founders usually learn too late:\npeople do not buy feature checklists. they\nbuy taste, point of view, and the feeling\nthat the team behind the product actually\nlives in the present.\n\nwhen every startup has access to the exact\nsame llms and api wrappers, technical\nexecution becomes baseline table stakes.\n\nthe moat shifts to distribution, narrative,\nand aesthetic standards.\n\nif your product is technically brilliant but\nnobody feels anything when they interact\nwith your brand, you’re competing purely on\nprice.\n\ntaste is what decides which tools become\ndefaults.",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  },
+  {
+    "id": "byro_brand_post_8",
+    "person": "Byro/company",
+    "source_type": "post",
+    "text": "Text \n\nstarted uni in tallinn last week while trying\nto get Byro from 70% to live.\n\nthe common advice for young founders is\nbinary: \"drop out immediately or you aren't\nserious.\"\n\nthat advice misses how modern building\nactually works:\n1. dev velocity with cursor and agentic\ntooling means two people can build what used\nto take a 6-person engineering team.\n2. the bottleneck isn't typing code 14 hours\na day anymore. it's distribution, customer\ndiscovery, and distribution loops.\n3. campus gives you an immediate sandbox of\nambitious technical peers you can't replicate\nsitting alone in a room.\n\nthe goal isn't playing the dramatic \"college\ndropout\" founder role for optics. it's\nruthlessly protecting the 4-5 high-focus\nhours every day where the product gets\nbuilt.",
+    "comment_mode": null,
+    "source_url": null,
+    "source_status": "Raw board explicitly marks this as Written by Byro; treat as brand/context evidence, not personal voice.",
+    "evidence_role": "brand/context evidence"
+  }
+]

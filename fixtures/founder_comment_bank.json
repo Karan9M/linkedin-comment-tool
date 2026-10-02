@@ -1,0 +1,203 @@
+[
+  {
+    "id": "rico_01",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "ai_agent_launch",
+    "mode": "quick_reaction",
+    "post": "We just launched our first AI agent into production. The demo worked, but retries, permissions and failure recovery turned out to be the real work.",
+    "reference_comment": "big W 🔥",
+    "style_note": "Very short celebratory reaction."
+  },
+  {
+    "id": "rico_02",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "hackathon",
+    "mode": "quick_reaction",
+    "post": "We just won the business track at a student hackathon after building an AI management tool in 48 hours.",
+    "reference_comment": "young goats 🫡",
+    "style_note": "Casual praise."
+  },
+  {
+    "id": "rico_03",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "product_launch",
+    "mode": "humorous_personal",
+    "post": "After six months of building, the product is finally live. The demo is polished. The production edge cases are not.",
+    "reference_comment": "the demo is the easy part 😂",
+    "style_note": "Short contextual joke."
+  },
+  {
+    "id": "rico_04",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "university",
+    "mode": "humorous_personal",
+    "post": "Started university in a new city while trying to build a startup at the same time.",
+    "reference_comment": "canon event incoming",
+    "style_note": "Short contextual meme-like reaction."
+  },
+  {
+    "id": "rico_05",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "agent_memory",
+    "mode": "quick_reaction",
+    "post": "We improved an AI agent by deleting old context instead of giving it more memory.",
+    "reference_comment": "the agent needs to forget fr",
+    "style_note": "Casual reaction using internet shorthand."
+  },
+  {
+    "id": "rico_06",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "shipping",
+    "mode": "humorous_personal",
+    "post": "Getting a product from 70% to launch was mostly debugging, edge cases and fixing things nobody notices.",
+    "reference_comment": "the boring 30% is the boss fight",
+    "style_note": "Short playful observation."
+  },
+  {
+    "id": "rico_07",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "team",
+    "mode": "quick_reaction",
+    "post": "We hired two more builders and the team is finally starting to feel like a real company.",
+    "reference_comment": "we're collecting the avengers now",
+    "style_note": "Playful team reaction."
+  },
+  {
+    "id": "rico_08",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "production_bug",
+    "mode": "humorous_personal",
+    "post": "We shipped the feature and immediately discovered a production-only bug nobody saw during development.",
+    "reference_comment": "production said hello 😭",
+    "style_note": "Short humorous reaction."
+  },
+  {
+    "id": "rico_09",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "B2B_marketing",
+    "mode": "quick_reaction",
+    "post": "The best B2B brands seem to care more about taste and distribution than adding another feature to the product.",
+    "reference_comment": "aura points for this",
+    "style_note": "Gen-Z slang style. Synthetic calibration only."
+  },
+  {
+    "id": "rico_10",
+    "founder": "Rico",
+    "synthetic": true,
+    "topic": "open_source",
+    "mode": "quick_reaction",
+    "post": "We open-sourced the internal tool we built to automate part of our AI workflow.",
+    "reference_comment": "W builders",
+    "style_note": "Very short builder-focused reaction."
+  },
+
+  {
+    "id": "fathin_01",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "agent_autonomy",
+    "mode": "add_insight",
+    "post": "We're giving our AI agents more tools and more autonomy. The main question is how much autonomy they should have before asking a human.",
+    "reference_comment": "The hard part is defining the stopping condition, not adding another tool.",
+    "style_note": "Specific operational observation."
+  },
+  {
+    "id": "fathin_02",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "ai_evals",
+    "mode": "thoughtful_question",
+    "post": "Our evaluation pipeline now scores every agent run automatically, but some technically correct outputs are still useless to the user.",
+    "reference_comment": "I wonder whether the benchmark should separate failure modes instead of collapsing them into one score.",
+    "style_note": "Challenges the evaluation framing."
+  },
+  {
+    "id": "fathin_03",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "agent_memory",
+    "mode": "add_insight",
+    "post": "We improved our agent by adding much more memory across tasks.",
+    "reference_comment": "More memory isn't necessarily better. Lifetime and deletion are part of the system boundary too.",
+    "style_note": "Adds a missing technical dimension."
+  },
+  {
+    "id": "fathin_04",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "document_parsing",
+    "mode": "thoughtful_question",
+    "post": "Our document parser improved its average benchmark score by 12%, but scanned pages, forms, tables and charts behave very differently.",
+    "reference_comment": "Did the gain come from routing by page class or from the parser inside each route?",
+    "style_note": "Specific evaluation question."
+  },
+  {
+    "id": "fathin_05",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "agent_graph",
+    "mode": "add_insight",
+    "post": "We added another graph layer to our multi-agent workflow to make the architecture easier to reason about.",
+    "reference_comment": "What survives a restart is a more useful question than how many nodes are in the graph.",
+    "style_note": "Reframes the architecture problem."
+  },
+  {
+    "id": "fathin_06",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "ai_governance",
+    "mode": "add_insight",
+    "post": "Companies are preparing for new AI transparency requirements, but most still don't know where AI is actually being used.",
+    "reference_comment": "Who can stop it is the operational question I'd put next to where AI is used.",
+    "style_note": "Adds an operational boundary."
+  },
+  {
+    "id": "fathin_07",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "human_review",
+    "mode": "add_insight",
+    "post": "Our AI system now routes difficult cases to a human reviewer before completing an action.",
+    "reference_comment": "The human isn't just a fallback here. They define the stopping condition.",
+    "style_note": "Defines the role of human authority."
+  },
+  {
+    "id": "fathin_08",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "agent_permissions",
+    "mode": "add_insight",
+    "post": "We reduced the permissions available to each AI agent so failures stay contained.",
+    "reference_comment": "Minimum access is useful, but the recovery path matters just as much.",
+    "style_note": "Extends the security argument."
+  },
+  {
+    "id": "fathin_09",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "production_ai",
+    "mode": "add_insight",
+    "post": "The first version of our AI product looked great in the demo. Production exposed most of the real engineering work.",
+    "reference_comment": "The happy path tells you very little about recovery.",
+    "style_note": "Short technical observation."
+  },
+  {
+    "id": "fathin_10",
+    "founder": "Fathin",
+    "synthetic": true,
+    "topic": "evaluation",
+    "mode": "thoughtful_question",
+    "post": "We're comparing agent traces across several versions of the system to find where quality improved.",
+    "reference_comment": "I wonder whether the right unit of evaluation is the decision, not the trace.",
+    "style_note": "Questions the evaluation unit."
+  }
+]

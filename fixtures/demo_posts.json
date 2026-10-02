@@ -1,0 +1,12 @@
+[
+  {"id":"rico_demo_1","founder":"Rico","label":"AI agent launch","text":"We just shipped our first AI agent into production. The demo worked, but retries, permissions and failure recovery turned out to be the real work.","synthetic":true},
+  {"id":"rico_demo_2","founder":"Rico","label":"Hackathon win","text":"We just won the business track at a student hackathon in Tallinn. Built an AI management tool in 48 hours. The product was fun, but meeting other builders was easily the best part.","synthetic":true},
+  {"id":"rico_demo_3","founder":"Rico","label":"Personal milestone","text":"One month into university. New people, one failed exam and somehow way too much money spent on coffee. Wouldn't trade it for anything.","synthetic":true},
+  {"id":"rico_demo_4","founder":"Rico","label":"Product launch","text":"After six months of building, breaking and rebuilding, our developer tool is finally live. The funny part is how much of the work happened after the demo already worked.","synthetic":true},
+  {"id":"rico_demo_5","founder":"Rico","label":"Unrelated / skip","text":"Spent the weekend hiking with friends. Perfect weather and a very good sandwich.","synthetic":true},
+  {"id":"fathin_demo_1","founder":"Fathin","label":"Agent autonomy","text":"We're giving our agents more tools and more autonomy. The unresolved question is when an irreversible action should require human approval.","synthetic":true},
+  {"id":"fathin_demo_2","founder":"Fathin","label":"AI evaluation","text":"Our evaluation pipeline catches obvious agent failures well, but we're still struggling with outputs that are technically correct and not useful to the user.","synthetic":true},
+  {"id":"fathin_demo_3","founder":"Fathin","label":"Document parsing","text":"Our document parser improved its average benchmark score by 12%, but scanned pages, tables, forms and charts are still failing very differently.","synthetic":true},
+  {"id":"fathin_demo_4","founder":"Fathin","label":"Agent memory","text":"We improved an agent's memory by deleting more context instead of storing more of it. More information turned out not to mean better memory.","synthetic":true},
+  {"id":"fathin_demo_5","founder":"Fathin","label":"Unrelated / skip","text":"Spent the weekend hiking with friends. The weather was perfect.","synthetic":true}
+]

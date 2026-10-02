@@ -1,0 +1,11 @@
+[
+  {
+    "id": "6a7186d5fe3c5ac0",
+    "status": "approved_handoff_mock",
+    "founder": "Rico",
+    "post_text": "Just shipped the first version of our AI agent.\nIt can now browse docs, use tools, and recover from failed actions without restarting the whole run.\nStill rough, but seeing it work end-to-end is crazy.",
+    "comment": "big W! 🔥",
+    "mode": "quick_reaction",
+    "timestamp": "2026-10-01T10:47:36.329526+00:00"
+  }
+]

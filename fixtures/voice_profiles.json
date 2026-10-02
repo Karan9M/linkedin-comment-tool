@@ -1,0 +1,39 @@
+{
+  "Fathin": {
+    "tone": "direct, technical, analytical",
+    "typical_length": "short_to_medium, with occasional very short reactions",
+    "humor": "occasional",
+    "technical_depth": "high",
+    "preferred_moves": [
+      "specific observation",
+      "technical question",
+      "challenge an assumption",
+      "propose a concrete experiment"
+    ],
+    "avoid": [
+      "generic praise",
+      "corporate marketing language",
+      "repeating the post",
+      "filler enthusiasm"
+    ],
+    "evidence_ids": ["fathin_comment_5", "fathin_comment_6", "fathin_comment_7", "fathin_comment_8"]
+  },
+  "Rico": {
+    "tone": "casual, playful, direct",
+    "typical_length": "very short",
+    "humor": "frequent",
+    "technical_depth": "variable",
+    "preferred_moves": [
+      "quick reaction",
+      "contextual joke",
+      "congratulation",
+      "casual encouragement"
+    ],
+    "avoid": [
+      "long polished explanations",
+      "corporate marketing language",
+      "generic AI praise"
+    ],
+    "evidence_ids": ["rico_comment_1", "rico_comment_2", "rico_comment_3", "rico_comment_4"]
+  }
+}
