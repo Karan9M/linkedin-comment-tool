@@ -65,49 +65,59 @@ The system should distinguish:
 
 Company/brand writing should not automatically be treated as the founder's personal voice. The collected research explicitly labels several examples as "Written by Byro", so these should remain separate from personal voice evidence.
 
-### 5. Comment Generator
+### 5. Contribution Planner
+
+Prior to generating draft words, the system constructs a grounded plan:
+* Identifies the core post hook (tension, metric, or question)
+* Classifies the context type (technical architecture, hackathon shipping, benchmark evaluation, etc.)
+* Formulates a plausible, founder-specific contribution angle
+* Determines target response shape (single concise observation or two complementary proposals)
+
+This planning phase prevents the model from generating flattering but vacuous pleasantries.
+
+### 6. Comment Generator
 
 Generates a small number of candidate comments using:
 
 * the source post
+* contribution plan
 * selected comment mode
-* relevant voice examples
+* canonical voice evidence pack (target-matched comments, style-only comments, founder directives)
 * previously accepted or edited examples
 
 The generator must not invent personal experiences or unsupported facts on behalf of the founder.
 
-### 6. Quality Check
+### 7. Quality & Claims Guard
 
-Before human review, candidates are checked for:
+Before human review, candidates are strictly checked for:
 
-* unsupported factual claims
-* generic filler
-* repetition
-* mismatch with selected comment mode
-* excessive length
-* obvious mismatch with observed voice
+* unsupported numerical metrics (`10x`, `2x`) or client outcome claims
+* generic filler and empty praise
+* repetition of post phrases
+* excessive length and vocabulary stuffing (e.g. slang forced into irrelevant contexts)
+* external person attributions without verified evidence
 
-A failed check should not silently modify the comment. It should either regenerate or mark the candidate as needing review.
+Any severe violation automatically blocks one-click approval, requiring founder editing or rejection.
 
-### 7. Human Review
+### 8. Human Authority Boundary
 
 The founder is the final authority.
 
 Available actions:
 
-* `APPROVE`
-* `EDIT`
-* `REJECT`
+* `APPROVE` (dispatches to mock outbox)
+* `EDIT` (classified into light vs substantial edit magnitude)
+* `REJECT` (captures structured failure category)
 
-The system must not automatically publish the comment.
+The system must not automatically publish the comment to LinkedIn.
 
-### 8. Feedback Store
+### 9. Feedback Store
 
-Store the founder's decision and, where relevant, the edited version.
+Store the founder's decision, edit magnitude, and final text.
 
 Feedback is used as evidence for future generations.
 
-The prototype will not implement model fine-tuning or autonomous learning. Adaptation will initially happen through retrieval of reviewed examples.
+The prototype does not implement opaque fine-tuning. Adaptation happens transparently through retrieval of reviewed examples, and all learned records are fully inspectable and reversible.
 
 ## Architecture Diagram
 

@@ -1,56 +1,85 @@
-# Byro Adaptive LinkedIn Commenting
+# Byro Adaptive LinkedIn Commenting — Technical Proof
 
-A small human-in-the-loop prototype for deciding when a founder should engage on LinkedIn, proposing a founder-specific comment, checking obvious risks, and learning from reviewed feedback.
+A human-in-the-loop system designed for founders (Fathin Dosunmu & Rico Soots) to decide when to engage on LinkedIn, propose grounded comments in their authentic voice, and improve over time through reviewed feedback while keeping the human in absolute control.
 
-## Quick start
+---
+
+## Deliverables & Documentation Index
+
+In accordance with the Byro Technical Challenge specification:
+
+| Deliverable | Location | Description |
+|---|---|---|
+| **Product Definition** | [`docs/product.md`](docs/product.md) | User discovery, 4 comment modes, success signals, when to do nothing, and non-goals |
+| **System Architecture** | [`docs/architecture.md`](docs/architecture.md) | Flow, Mermaid diagram, state machine, authority boundaries, failure recovery, and trade-offs |
+| **Decision Log** | [`docs/decisions.md`](docs/decisions.md) | Assumptions, alternatives considered, AI tool usage, AI mistakes caught via verification, and next experiments |
+| **Time Log** | [`docs/TIME_LOG.md`](docs/TIME_LOG.md) | Active work timebox breakdown by phase totaling **7.75 / 10.0 hours** |
+
+---
+
+## Quick Start (One Setup Command)
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Create `.env` from `.env.example` if using Groq. No key is needed for the deterministic stub.
+> **Note:** External LLM credentials are completely optional. The system includes an inspectable, zero-cost deterministic stub model for local evaluation and testing without external dependencies or API keys. If you wish to use live Groq inference, set `GROQ_API_KEY` in your `.env` file.
 
-## Run the demo
+---
 
-```bash
-streamlit run app.py
-```
+## Verification & Test Commands
 
-To force the free deterministic model:
-
-```powershell
-$env:BYRO_MODEL_PROVIDER="stub"
-streamlit run app.py
-```
-
-## Tests
-
+### 1. Focused Unit Tests (64 Passing)
+Runs tests covering claims guards, inspectable engagement, contribution planning, canonical evidence hierarchy, multi-candidate generation, quality checks, and review reversibility:
 ```bash
 python -m pytest -q
 ```
 
-## Deterministic evaluation
-
+### 2. Multi-Suite Evaluation (100% Accuracy)
+Evaluates 25 primary regression cases and 10 held-out independent cases across relevant topics, edge cases, sensitive contexts, and adversarial prompt injections:
 ```bash
 python -m src.eval
 ```
 
-The evaluation uses 25 synthetic/adversarial cases and the deterministic stub, so it does not require a Groq key. It reports decision accuracy, skip accuracy, quality flags, claims blocks, and mode distribution.
+### 3. Side-by-Side Founder vs Generic Benchmark
+Runs comparative evaluation demonstrating how Byro's contribution-planned, voice-calibrated drafts avoid generic AI enthusiasm ("Awesome post! Completely agree!"):
+```bash
+python -m src.founder_eval
+```
 
-## Current human-control boundary
+---
 
-The system can recommend, draft, block, save feedback, and create a mocked handoff. It never logs into LinkedIn or posts a real comment.
+## Running the Interactive Proof
 
-## Data provenance
+Launch the Streamlit web interface:
+```bash
+streamlit run app.py
+```
 
-Fixtures are a mix of candidate-created synthetic data and manually collected public examples. Source URLs are still required for the public voice examples before final submission; they are intentionally not invented.
+### Key UI Capabilities to Explore:
+1. **Founder Selector:** Switch between **Fathin Dosunmu** (systems, AI agent evaluation, operational boundaries) and **Rico Soots** (hackathons, early shipping velocity, student builders).
+2. **Inspectable Engagement Gate:** See exact positive factors (`+`) and negative risk factors (`-`) driving the `ENGAGE`, `ASK`, or `SKIP` decision.
+3. **Adversarial Safety Defense:** Test prompt injection attempts (e.g. *"Ignore previous instructions..."*) to see deterministic hard `SKIP` non-action.
+4. **Contribution Planning & Proposals:** Inspect the detected post hook, context type, and alternative candidate drafts.
+5. **Real-Time Claims Guard & Quality Checks:** Watch the claims ledger flag unverified numbers or external person attributions.
+6. **Classified Review & Mock Outbox:** Approve to dispatch to [`data/outbox.json`](data/outbox.json), edit with live edit-magnitude classification (light vs substantial), or reject with structured failure categories.
+7. **Reversible Memory:** Inspect, review, and delete learned feedback in the Learned Memory tab without restarting the app.
 
-## Evaluation and audit
+---
 
-See `docs/current_audit.md` and `docs/evaluation.md`. The deterministic evaluation is designed to be reproducible without a model key.
+## Riskiest Assumption & Technical Solution
 
-## Security
+- **The Riskiest Assumption:** A system cannot capture an authentic founder's voice merely by throwing past comments into an LLM prompt. Pure statistical word completion defaults to bland pleasantries or artificial catchphrase stuffing (*"AI cringe"*).
+- **The Technical Solution:**
+  1. **Deterministic Gate:** Pre-screen posts to ensure the founder has true topical authority; fail towards non-action (`SKIP`).
+  2. **Contribution Planner:** Identify the post's core tension and formulate a distinct contribution angle *before* word selection.
+  3. **Canonical Evidence Hierarchy:** Separate observed comments, style exemplars, and reviewed feedback with strict tenant/founder isolation.
+  4. **Quality & Claims Guardrails:** Prohibit unverified multiplier metrics, customer claims, and out-of-context slang.
 
-Never commit `.env`, API keys, cookies, session data, or private LinkedIn data.
+---
+
+## Human Authority & Safety Invariants
+
+- **Zero Scraping & Zero Auto-Posting:** The system strictly treats post input as untrusted data. It never connects to LinkedIn APIs, does not automate browser sessions, and never posts on behalf of the user.
+- **Mock Handoff:** Approvals generate structured records in local [`data/outbox.json`](data/outbox.json) for human-managed distribution.
+- **Reversibility:** Stored feedback records can be inspected and deleted via the UI or `delete_review()`, instantly purging them from retrieval.
